@@ -1,21 +1,32 @@
+"use client";
 
-import  {useState} from "react"
-export default function Home(){
-    const [loading, setLoading] = useState(false)
-    const [githubData, setGithubData] = useState(null)
-    const  [username, setUsername] = useState("")
+import { useState } from "react";
 
-    const getGithubUser = async ()=>{
-        setLoading(true)
-        const response = await fetch(
-            `https://api.github.com/users/${username}`
-        )
-        const data = await response.json()
-        setGithubData(data)
-        setLoading(false)
-    }
+export default function Home() {
+  const [username, setUsername] = useState("");
+  const [data, setData] = useState<any>(null);
 
-    return(
+  const search = async () => {
+    const res = await fetch(`/api/github?username=${username}`);
+    const result = await res.json();
+    setData(result);
+  };
 
-    )
+  return (
+    <div>
+      <input
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        placeholder="GitHub username"
+      />
+
+      <button onClick={search}>Search</button>
+
+      {data && (
+        <pre>
+          {JSON.stringify(data, null, 2)}
+        </pre>
+      )}
+    </div>
+  );
 }

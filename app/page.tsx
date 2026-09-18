@@ -1,12 +1,12 @@
 import Header from "@/components/Header";
-import ProfileCard from "@/components/ProfileCard";
+import HomeComponent from "@/components/Home"
 
 
 export default function Home() {
   return (
     <div>
      <Header/>
-     <ProfileCard/>
+      <HomeComponent/>
     </div>
   );
 }
