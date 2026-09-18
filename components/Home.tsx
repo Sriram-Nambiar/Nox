@@ -14,15 +14,20 @@ export default function Home() {
 
   return (
     <div>
-      <input
+      <input className="m-3"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder="GitHub username"
       />
 
-      <button onClick={search}>Search</button>
+      <button className="m-3" onClick={search}>Search</button>
 
-          {JSON.stringify(data)}
+        {data.name}
+        <img className="rounded-full size-30" src={data.avatar_url}/>
+        <p>Followers</p>
+        {data.followers}
+        <p>Following</p>
+        {data.following}
        
       
     </div>
