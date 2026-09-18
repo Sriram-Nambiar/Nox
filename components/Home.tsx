@@ -22,11 +22,9 @@ export default function Home() {
 
       <button onClick={search}>Search</button>
 
-      {data && (
-        <pre>
-          {JSON.stringify(data, null, 2)}
-        </pre>
-      )}
+          {JSON.stringify(data)}
+       
+      
     </div>
   );
 }
