@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+An interactive developer tool that fetches GitHub user data via API and uses custom logic to transform repository stats, commit history, and language usage into dynamic challenges and achievements.
 
 ## Getting Started
 
